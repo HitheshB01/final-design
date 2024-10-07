@@ -1,23 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+// import AvailableJobs from "./components/AvailableJobs";
+// import JobPortal from "./components/JobPortal";
+// import LoginPage from "./components/LoginPage";
+// import ProfilePage from "./components/ProfilePage";
+// import SideNav from "./components/SideNav";
+
+// export default function App() {
+//   return (
+//    <div>
+//     <LoginPage/>
+//     <JobPortal/>
+//     <AvailableJobs/>
+//     <ProfilePage/>
+//     <SideNav/>
+//    </div>
+//   )
+// }
+
+
+import React from 'react';
+import RoutingPage from './components/RoutingPage';
+import LoginPage from './components/LoginPage';
+import JobPortal from './components/JobPortal';
+
+
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      <LoginPage/>
+      <RoutingPage/>
+      <JobPortal/>
+     
     </div>
   );
 }
