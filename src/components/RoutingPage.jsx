@@ -6,23 +6,26 @@ import ResumePage from "./ResumePage";
 import ProfilePage from "./ProfilePage";
 import HomePage from "./HomePage";
 import Layout from "./Layout";
+import LoginPage from "./LoginPage";  
 import JobPortal from "./JobPortal";
 
 // Configure routes with SideNav as the parent (Layout)
+
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <Layout />, // SideNav and Outlet
+    path: "/layout",
+    element: <Layout />, // Protected route, only accessible if logged in
     children: [
-      { path: "/", element: <HomePage /> }, // Child route for HomePage
-      { path: "jobs", element: <JobsPage /> },
-    //   { path: "jobdescription", element: <JobPortal /> },
-
-      // Child route for JobsPage
-      { path: "applied", element: <AppliedPage /> }, // Child route for AppliedPage
-      { path: "resume", element: <ResumePage /> }, // Child route for ResumePage
-      { path: "profile", element: <ProfilePage /> }, // Child route for ProfilePage
+      { path: "layout", element: <HomePage /> }, // Home page
+      { path: "jobs", element: <JobsPage /> }, // Jobs page
+      { path: "applied", element: <AppliedPage /> }, // Applied jobs page
+      { path: "resume", element: <ResumePage /> }, // Resume page
+      { path: "profile", element: <ProfilePage /> }, // Profile page
     ],
+  },
+  {
+    path: "/",
+    element: <LoginPage />,
   },
 ]);
 

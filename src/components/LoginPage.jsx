@@ -1,10 +1,34 @@
-import React from 'react';
+import React, { useState } from 'react';
 import img from '../images/login_img.png'
 import logo from '../images/Logo.png'
+import { signInWithEmailAndPassword } from 'firebase/auth';
+import { auth } from '../components/firebase';
+//import { useNavigate } from 'react-router-dom'; // Import useNavigate for navigation
+
 
 
 
 function LoginPage() {
+const [email, setEmail] = useState('');
+const [password, setPassword] = useState('');
+//const navigate = useNavigate(); // Initialize navigate
+
+const handleSubmit = async(e) => {
+  e.preventDefault();
+  try
+  { await signInWithEmailAndPassword(auth, email, password);
+    console.log('Logged in');
+    window.location.href = '/jobs'; // This forces a full reload and navigates to the root path
+
+   // navigate('/'); // Navigate to the layout page after successful login
+
+
+  }
+  catch(error) {
+    console.log(error.message);
+  }
+}
+
   return (
     <div className="flex h-screen">
       {/* Left Side */}
@@ -38,14 +62,15 @@ function LoginPage() {
 
           {/* Login Form */}
           <h2 className="text-2xl font-bold ml-4 mb-6">LOGIN</h2>
-          <form className="space-y-4">
+          <form className="space-y-4" onSubmit={handleSubmit}>
             {/* Mobile Number Input */}
             <div>
-              <label className="block text-sm font-medium text-gray-700">Mobile number</label>
+              <label className="block text-sm font-medium text-gray-700">Gmail</label>
               <input
-                type="text"
-                placeholder="4565544445"
+                type="gmail"
+                placeholder="user@gmail.com"
                 className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                onChange={(e) => setEmail(e.target.value)}
               />
             </div>
 
@@ -57,6 +82,7 @@ function LoginPage() {
                   type="password"
                   placeholder="••••••••"
                   className="mt-1 block w-full border border-gray-300 rounded-md p-2"
+                  onChange={(e) => setPassword(e.target.value)}
                 />
                 {/* Password Eye Icon */}
                 <span className="absolute inset-y-0 right-0 flex items-center pr-3 text-gray-400">
@@ -83,21 +109,7 @@ function LoginPage() {
             </button>
           </form>
 
-{/*           
-          <div className="my-6 text-center text-gray-500">or</div>
 
-          Google Login Button
-          <button
-            className="w-full flex items-center justify-center border border-gray-300 py-2 rounded-md text-gray-600 hover:bg-gray-50"
-          >
-            <img src="path-to-google-icon" alt="Google Icon" className="h-5 mr-2" />
-            Login with Google
-          </button>
-
-          Signup Link
-          <p className="mt-4 text-center text-sm">
-            Don't have an account? <a href="#" className="text-blue-600 hover:underline">Signup</a>
-          </p> */}
         </div>
       </div>
     </div>

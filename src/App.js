@@ -27,9 +27,9 @@ import JobPortal from './components/JobPortal';
 function App() {
   return (
     <div>
-      <LoginPage/>
+      {/* <LoginPage/> */}
       <RoutingPage/>
-      <JobPortal/>
+      {/* <JobPortal/> */}
      
     </div>
   );
