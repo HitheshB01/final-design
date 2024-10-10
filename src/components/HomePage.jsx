@@ -1,37 +1,62 @@
 import React from 'react';
+import c1 from '../images/c1.png';
+import c2 from '../images/c2.png';
+import c3 from '../images/c3.png';
+import c4 from '../images/c4.png';
+import c5 from '../images/c5.png';
+import c6 from '../images/c6.png';
+import c7 from '../images/c7.png';
+import c8 from '../images/c8.png';
+import c9 from '../images/c9.png';
+import c10 from '../images/c10.png';
+import c11 from '../images/c11.png';
+import c12 from '../images/c12.png';
+import clg1 from '../images/clg1.jpeg';
+import clg2 from '../images/clg2.jpeg';
+import clg3 from '../images/clg3.jpeg';
+import clg4 from '../images/clg4.jpeg';
+import clg5 from '../images/clg5.jpeg';
+import clg6 from '../images/clg6.jpeg';
+import clg7 from '../images/clg7.jpeg';
+import clg8 from '../images/clg8.jpeg';
+
+
+
+
 
 
 const images = [
-    'https://via.placeholder.com/400x400',
-    'https://via.placeholder.com/300x500',
-    'https://via.placeholder.com/400x300',
-    'https://via.placeholder.com/500x500',
-    'https://via.placeholder.com/300x400',
-    'https://via.placeholder.com/400x400',
-    'https://via.placeholder.com/300x200',
-    'https://via.placeholder.com/500x300',
-    'https://via.placeholder.com/400x200',
+
+    clg2,
+    clg3,
+    clg1,
+    clg7,
+    clg5,
+    clg4,
+    clg5,
+    clg6,
+    clg8,
   ];
 
   const companies = [
-    { name: 'Wipro', logo: 'https://via.placeholder.com/150' }, 
-    { name: 'Philips', logo: 'https://via.placeholder.com/150' },
-    { name: 'Mindtree', logo: 'https://via.placeholder.com/150' },
-    { name: 'IBM', logo: 'https://via.placeholder.com/150' },
-    { name: 'Infosys', logo: 'https://via.placeholder.com/150' },
-    { name: 'EMC', logo: 'https://via.placeholder.com/150' },
-    { name: 'TCS', logo: 'https://via.placeholder.com/150' },
-    { name: 'Cognizant', logo: 'https://via.placeholder.com/150' },
-    { name: 'Cognizant', logo: 'https://via.placeholder.com/150' },
-    { name: 'Wipro', logo: 'https://via.placeholder.com/150' }, 
-    { name: 'Philips', logo: 'https://via.placeholder.com/150' },
-    { name: 'Mindtree', logo: 'https://via.placeholder.com/150' },
-    { name: 'IBM', logo: 'https://via.placeholder.com/150' },
-    { name: 'Infosys', logo: 'https://via.placeholder.com/150' },
-    { name: 'EMC', logo: 'https://via.placeholder.com/150' },
-    { name: 'IBM', logo: 'https://via.placeholder.com/150' },
-    { name: 'Infosys', logo: 'https://via.placeholder.com/150' },
-    { name: 'EMC', logo: 'https://via.placeholder.com/150' },
+    { name: 'Wipro', logo: c1 }, 
+    { name: 'Philips', logo: c2 },
+    { name: 'Mindtree', logo: c3 },,
+    { name: 'IBM', logo: c4 },
+    { name: 'Infosys', logo: c5 },
+    { name: 'EMC', logo: c6 },
+    { name: 'TCS', logo: c7 },
+    { name: 'Cognizant', logo: c8 },
+    { name: 'Cognizant', logo: c9 },
+    { name: 'Wipro', logo: c10 }, 
+    { name: 'Philips', logo: c11 },
+    { name: 'Mindtree', logo: c12 },
+    // { name: 'IBM', logo: 'https://via.placeholder.com/150' },
+    // { name: 'Infosys', logo: 'https://via.placeholder.com/150' },
+    // { name: 'EMC', logo: 'https://via.placeholder.com/150' },
+    // { name: 'IBM', logo: 'https://via.placeholder.com/150' },
+    // { name: 'Infosys', logo: 'https://via.placeholder.com/150' },
+    // { name: 'EMC', logo: 'https://via.placeholder.com/150' },
     // Add more company logos here
   ];
 
@@ -49,6 +74,8 @@ const HomePage = () => {
       </header>
 
       {/* Image Grid */}
+      <h2 className="text-3xl text-center font-bold mb-2 mt-16">OUR CAMPUS</h2>
+
       <section className="py-12">
       <div className="container mx-auto grid grid-cols-12 grid-rows-6 gap-2 h-[100vh]">
         {/* Grid layout based on the provided image */}

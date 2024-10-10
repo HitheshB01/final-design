@@ -31,8 +31,8 @@ function JobsPage() {
             {/* Apply Button and Bookmark */}
             <div className="flex items-center space-x-4">
               <button className="bg-teal-600 text-white py-2 px-6 rounded-md">Apply</button>
-              <button className="bg-teal-600 text-white py-2 px-6 rounded-md"><MdDescription />
-              </button>
+              <Link to="/jobportal"><button className="bg-teal-600 text-white py-2 px-6 rounded-md"><MdDescription />
+              </button></Link>
 
               {/* <Link to="/jobdescription">more info</Link> */}
               <button className="text-teal-600 text-xl">

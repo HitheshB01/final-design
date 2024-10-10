@@ -11,25 +11,33 @@ import JobPortal from "./JobPortal";
 
 // Configure routes with SideNav as the parent (Layout)
 
-const router = createBrowserRouter([
-  {
-    path: "/layout",
-    element: <Layout />, // Protected route, only accessible if logged in
-    children: [
-      { path: "layout", element: <HomePage /> }, // Home page
-      { path: "jobs", element: <JobsPage /> }, // Jobs page
-      { path: "applied", element: <AppliedPage /> }, // Applied jobs page
-      { path: "resume", element: <ResumePage /> }, // Resume page
-      { path: "profile", element: <ProfilePage /> }, // Profile page
-    ],
-  },
-  {
-    path: "/",
-    element: <LoginPage />,
-  },
-]);
+
 
 const RoutingPage = () => {
+  const router = createBrowserRouter([
+    {
+      path: "/", // This is the login route
+      element: <LoginPage />,
+    },
+    {
+      path: "/layout", // Protected Layout route
+      element: <Layout />, // Layout will be rendered if authenticated
+      children: [
+        { path: "", element: <HomePage /> }, // Home page at /layout
+        { path: "jobs", element: <JobsPage /> }, // Jobs page at /layout/jobs
+        { path: "applied", element: <AppliedPage /> }, // Applied jobs page at /layout/applied
+        { path: "resume", element: <ResumePage /> }, // Resume page at /layout/resume
+        { path: "profile", element: <ProfilePage /> }, // Profile page at /layout/profile
+      ],
+    },
+    {
+      path: "/jobportal",
+      element: <JobPortal />,
+    },
+  ]);
+  
+  
+  
   return (
     <div>
       <RouterProvider router={router} />

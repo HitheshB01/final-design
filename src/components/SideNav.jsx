@@ -25,26 +25,35 @@
 
 // export default SideNav;
 
-import React from 'react';
-import { Link } from 'react-router-dom';
-import { FaHome, FaBriefcase, FaFileAlt, FaUserAlt, FaClipboardList } from 'react-icons/fa';
-import logo from '../images/Logo.png'
+import React from "react";
+import { Link } from "react-router-dom";
+import {
+  FaHome,
+  FaBriefcase,
+  FaFileAlt,
+  FaUserAlt,
+  FaClipboardList,
+} from "react-icons/fa";
+import { RiLogoutBoxFill } from "react-icons/ri";
+
+import logo from "../images/Logo.png";
 
 const SideNav = () => {
   return (
     <div className="h-screen w-64 bg-gradient-to-b from-green-500 to-teal-600 text-white shadow-lg flex flex-col">
       {/* Logo */}
       <div className="p-6 flex items-center justify-center">
-      <img
-              src={logo} // Add your logo here
-              alt="TAGES Logo"
-              className="h-40 mx-auto mix-blend-multiply"
-            />      </div>
+        <img
+          src={logo} // Add your logo here
+          alt="TAGES Logo"
+          className="h-40 mx-auto mix-blend-multiply"
+        />{" "}
+      </div>
 
       {/* Nav Links */}
       <nav className=" flex flex-col space-y-4">
         <Link
-          to="/"
+          to="/layout"
           className="flex items-center text-lg py-3 px-6 hover:bg-teal-500 hover:shadow-md rounded-lg transition ease-in-out duration-300"
         >
           <FaHome className="mr-4" />
@@ -52,7 +61,7 @@ const SideNav = () => {
         </Link>
 
         <Link
-          to="/jobs"
+          to="/layout/jobs"
           className="flex items-center text-lg py-3 px-6 hover:bg-teal-500 hover:shadow-md rounded-lg transition ease-in-out duration-300"
         >
           <FaBriefcase className="mr-4" />
@@ -60,7 +69,7 @@ const SideNav = () => {
         </Link>
 
         <Link
-          to="/applied"
+          to="/layout/applied"
           className="flex items-center text-lg py-3 px-6 hover:bg-teal-500 hover:shadow-md rounded-lg transition ease-in-out duration-300"
         >
           <FaClipboardList className="mr-4" />
@@ -68,7 +77,7 @@ const SideNav = () => {
         </Link>
 
         <Link
-          to="/resume"
+          to="/layout/resume"
           className="flex items-center text-lg py-3 px-6 hover:bg-teal-500 hover:shadow-md rounded-lg transition ease-in-out duration-300"
         >
           <FaFileAlt className="mr-4" />
@@ -76,16 +85,25 @@ const SideNav = () => {
         </Link>
 
         <Link
-          to="/profile"
+          to="/layout/profile"
           className="flex items-center text-lg py-3 px-6 hover:bg-teal-500 hover:shadow-md rounded-lg transition ease-in-out duration-300"
         >
           <FaUserAlt className="mr-4" />
           Profile
         </Link>
+      
+
+      <Link
+          to="/"
+          className="flex items-center text-lg py-3 px-6 hover:bg-teal-500 hover:shadow-md rounded-lg transition ease-in-out duration-300"
+        >
+          <RiLogoutBoxFill className="mr-4" />
+          LogOut
+        </Link>
       </nav>
 
       {/* Profile Avatar at Bottom */}
-      <div className="mt-auto p-6 flex items-center justify-center">
+      {/* <div className="mt-auto p-6 flex items-center justify-center">
         <div className="flex flex-col items-center">
           <img
             src="https://via.placeholder.com/50"
@@ -94,9 +112,9 @@ const SideNav = () => {
           />
           <p className="text-sm">John Doe</p>
         </div>
-      </div>
+      </div> */}
     </div>
   );
-}
+};
 
 export default SideNav;
