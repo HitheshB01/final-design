@@ -26,7 +26,9 @@
 // export default SideNav;
 
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link,useNavigate } from "react-router-dom";
+import { getAuth, signOut } from "firebase/auth"; // Firebase auth functions
+
 import {
   FaHome,
   FaBriefcase,
@@ -39,6 +41,20 @@ import { RiLogoutBoxFill } from "react-icons/ri";
 import logo from "../images/Logo.png";
 
 const SideNav = () => {
+
+  const navigate = useNavigate(); // for navigation after logout
+  const auth = getAuth(); // Initialize Firebase auth
+
+  const handleLogout = () => {
+    signOut(auth)
+      .then(() => {
+        console.log("User logged out successfully");
+        navigate("/"); // Redirect to the login page or home after logout
+      })
+      .catch((error) => {
+        console.error("Error logging out:", error);
+      });
+  };
   return (
     <div className="h-screen w-64 bg-gradient-to-b from-green-500 to-teal-600 text-white shadow-lg flex flex-col">
       {/* Logo */}
@@ -100,19 +116,16 @@ const SideNav = () => {
           <RiLogoutBoxFill className="mr-4" />
           LogOut
         </Link>
+        <button
+          onClick={handleLogout}
+          className="flex items-center text-lg py-3 px-6 hover:bg-teal-500 hover:shadow-md rounded-lg transition ease-in-out duration-300"
+        >
+          <RiLogoutBoxFill className="mr-4" />
+          LogOut
+        </button>
       </nav>
 
-      {/* Profile Avatar at Bottom */}
-      {/* <div className="mt-auto p-6 flex items-center justify-center">
-        <div className="flex flex-col items-center">
-          <img
-            src="https://via.placeholder.com/50"
-            alt="Profile Avatar"
-            className="rounded-full mb-3"
-          />
-          <p className="text-sm">John Doe</p>
-        </div>
-      </div> */}
+     
     </div>
   );
 };
